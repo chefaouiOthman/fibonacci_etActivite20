@@ -103,7 +103,7 @@ for i in adresses_ip.values():
 print(f"On a {d} adresses IP publique dans la liste")
 Installation
 Clonez ce dépôt :
-
+https://github.com/chefaouiOthman/fibonacci_etActivite20
 Assurez-vous que Python est installé (version 3.x recommandée).
 Exécutez les fichiers Python avec la commande suivante :
 python fibonacci.py
