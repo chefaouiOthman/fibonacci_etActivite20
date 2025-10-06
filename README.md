@@ -101,3 +101,14 @@ for i in adresses_ip.values():
     if i == "adresses IP publique":
         d += 1
 print(f"On a {d} adresses IP publique dans la liste")
+Installation
+Clonez ce dépôt :
+
+Assurez-vous que Python est installé (version 3.x recommandée).
+Exécutez les fichiers Python avec la commande suivante :
+python fibonacci.py
+python Activite20.py
+
+
+Contribution
+Si vous souhaitez contribuer à ce projet, vous pouvez envoyer des pull requests ou ouvrir des issues pour discuter des améliorations possibles.
