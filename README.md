@@ -1,96 +1,143 @@
-# fibonacci_etActivite20
-Realisation de la suite de fibonacci de maniere recursif et la realisation des taches de l'activite 20
-#ACTIVITE19_QUESTION7
-#maniere recursif
+Description
+
+Ce projet contient deux fichiers Python démontrant différents concepts de programmation :
+
+fibonacci.py : Ce fichier contient une implémentation de la suite de Fibonacci en utilisant une approche récursive. Une approche itérative est également incluse, mais commentée.
+
+Activite20.py : Ce fichier illustre la manipulation des adresses IP dans une liste et un dictionnaire. Il permet de réaliser plusieurs opérations comme la recherche d'adresses, l'ajout, la suppression et le tri des adresses IP.
+
+Fichiers
+1. fibonacci.py
+
+Ce fichier contient une fonction pour calculer les nombres de la suite de Fibonacci de manière récursive. La fonction f7(n) utilise la récursivité pour calculer le n-ème terme de la suite de Fibonacci.
+
+Fonctionnalité :
+
+Récursif : Calcul du n-ème terme de la suite de Fibonacci.
+
+La fonction f7(n) vérifie si n est égal à 0 ou 1 et retourne 1 dans ce cas. Sinon, elle effectue une somme récursive des deux termes précédents.
+
+Exécution :
+
+L'utilisateur doit entrer un nombre entier n, et le programme affiche le n-ème terme de la suite de Fibonacci.
+
+Exemple d'exécution :
+
+$ python fibonacci.py
+donner un n: 5
+fibonacci(5) = 5
+
+
+Code :
+
+# manière récursive
 def f7(n):
-    if n==0 or n==1:
+    if n == 0 or n == 1:
         return 1
-    elif n>1 :
-        return f7(n-1)+f7(n-2)
+    elif n > 1:
+        return f7(n-1) + f7(n-2)
     else:
-        return 0 # ou bien on pouvait verifier ce que l'utilisateur saisit dans le programme principal
-                    # avec le while true
-                               #if condition
-                                    #break
-#test
-m=int(input("donner un n"))
-print(f"fibonacci({m})={f7(m)}")
-#maniere iteratif
-"""
-def f7(n):
-    j=1
-    Un=1
-    for i in range(n+1):
-        c=Un
-        Un=Un+j
-        j=c
-    return Un
-print(f7(5))
-"""
-#ACTIVITE20
+        return 0
 
-#On declare la liste
+# test
+m = int(input("donner un n"))
+print(f"fibonacci({m}) = {f7(m)}")
 
-adresses_ip=["192.168.0.1","10.0.0.1","172.16.0.1","200.100.50.1","169.254.0.1"]
+2. Activite20.py
 
-#Quel est la premier adresse de la liste
-print(adresses_ip[0])
+Ce fichier permet de travailler avec une liste d'adresses IP et un dictionnaire qui associe des adresses IP à des classes d'adresses. Il permet d'effectuer plusieurs opérations de manipulation de données.
 
-##Quel est la derniere adresse de la liste
-print(adresses_ip[-1])
+Fonctionnalités :
 
-#Quel est la troisieme adresse dans la liste
-print(adresses_ip[2])
+Liste d'adresses IP : Recherche de la première, dernière, et troisième adresse dans la liste.
 
-#Ajout de l'adresse "172.31.0.1" a la liste
-adresses_ip.append("172.31.0.1")
+Ajout et suppression d'adresses IP.
 
-#supprimer l'adresse IP "200.100.50.1"
-adresses_ip.remove("200.100.50.1")
-                #ou on pouvait faire adresses_ip.pop(3) ou del adresses_ip[3]
+Vérification de la présence d'une adresse IP dans la liste.
 
-#combien d'adresses restent maintenant ?
+Dictionnaire d'adresses IP : Trie des adresses IP par ordre croissant et vérification de leur classe.
+
+Exécution :
+
+Le programme affiche les résultats des opérations sur la liste d'adresses IP et le dictionnaire.
+
+Exemple d'exécution :
+
+$ python Activite20.py
+192.168.0.1
+169.254.0.1
+172.16.0.1
+Ils restent maintenant 6 adresses dans la liste
+Oui l'adresse "192.168.0.1" est présente
+La classe de l'adresse IP de "10.0.0.1" est classe A
+
+
+Code :
+
+# On déclare la liste d'adresses IP
+adresses_ip = ["192.168.0.1", "10.0.0.1", "172.16.0.1", "200.100.50.1", "169.254.0.1"]
+
+# Opérations sur la liste
+print(adresses_ip[0])  # Premier élément
+print(adresses_ip[-1])  # Dernier élément
+print(adresses_ip[2])  # Troisième élément
+adresses_ip.append("172.31.0.1")  # Ajout d'une adresse
+adresses_ip.remove("200.100.50.1")  # Suppression d'une adresse
+
 print(f"Ils restent maintenant {len(adresses_ip)} adresses dans la liste")
 
-#verifier si l'adresse "192.168.0.1" est presente
 if "192.168.0.1" in adresses_ip:
-    print("Oui l'adresse \"192.168.0.1\" est presente")
-else :
+    print("Oui l'adresse \"192.168.0.1\" est présente")
+else:
     print("Non l'adresse \"192.168.0.1\" n'existe pas")
 
-#quelle est la classe de l'adresse IP de "10.0.0.1"
-    #Maintenant on va travailler avec le dictionnaire pour que cela aura un sens
+# Dictionnaire d'adresses IP et leurs classes
+adresses_ip = {
+    "192.168.0.1": "classe C",
+    "10.0.0.1": "classe A",
+    "172.16.0.1": "classe B",
+    "200.100.50.1": "adresses IP publique",
+    "169.254.0.1": "adresse IP de lien local (APIPA)"
+}
 
-adresses_ip={
-    "192.168.0.1":"classe C",
-    "10.0.0.1":"classe A",
-    "172.16.0.1":"classe B",
-    "200.100.50.1":"adresses IP publique",
-    "169.254.0.1":"adresse IP de lien local(APIPA)"
-            }
-    #on pouvait creer le dictionnaire avec adresses_ip=dict.fromkeys(adresses_ip) mais ca va etre dans plus de lignes de code
-    #  et on devait aussi modifier la liste avant d'execute dict.fromkeys
+print("La classe de l'adresse IP de \"10.0.0.1\" est ", adresses_ip["10.0.0.1"])
 
-print("La classe de l'adresse IP de \"10.0.0.1\" est ",adresses_ip["10.0.0.1"])
-
-#trie des adresses par ordre croissant
-adresses_ip=dict(sorted(adresses_ip.items()))
+# Tri des adresses IP
+adresses_ip = dict(sorted(adresses_ip.items()))
 print(adresses_ip)
 
-#verifions si toutes les adresses IP de la liste appartiennent a la classe C
-d=True
+# Vérification des classes
+d = True
 for i in adresses_ip.values():
-    if i!="Classe C":
-        d=False
+    if i != "Classe C":
+        d = False
         break
-print(f"toutes les adresses IP de la liste appartiennent a la classe C est {d}")
+print(f"Toutes les adresses IP de la liste appartiennent à la classe C : {d}")
 
-d=0
+d = 0
 for i in adresses_ip.values():
-    if i=="adresses IP publique":
-        d+=1
-print(f"on a {d} adresses IP publique dans la liste")
+    if i == "adresses IP publique":
+        d += 1
+print(f"On a {d} adresses IP publique dans la liste")
+
+Installation
+
+Clonez ce dépôt :
+
+git clone https://github.com/username/nom-du-projet.git
 
 
+Assurez-vous que Python est installé (version 3.x recommandée).
 
+Exécutez les fichiers Python avec la commande suivante :
 
+python fibonacci.py
+python Activite20.py
+
+Contribution
+
+Si vous souhaitez contribuer à ce projet, vous pouvez envoyer des pull requests ou ouvrir des issues pour discuter des améliorations possibles.
+
+Licence
+
+Ce projet est sous licence MIT.
