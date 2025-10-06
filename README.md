@@ -20,16 +20,11 @@ La fonction f7(n) vérifie si n est égal à 0 ou 1 et retourne 1 dans ce cas. S
 Exécution :
 
 L'utilisateur doit entrer un nombre entier n, et le programme affiche le n-ème terme de la suite de Fibonacci.
-
 Exemple d'exécution :
-
 $ python fibonacci.py
 donner un n: 5
 fibonacci(5) = 5
-
-
 Code :
-
 # manière récursive
 def f7(n):
     if n == 0 or n == 1:
@@ -42,13 +37,8 @@ def f7(n):
 # test
 m = int(input("donner un n"))
 print(f"fibonacci({m}) = {f7(m)}")
-
-2. Activite20.py
-
+Activite20.py
 Ce fichier permet de travailler avec une liste d'adresses IP et un dictionnaire qui associe des adresses IP à des classes d'adresses. Il permet d'effectuer plusieurs opérations de manipulation de données.
-
-Fonctionnalités :
-
 Liste d'adresses IP : Recherche de la première, dernière, et troisième adresse dans la liste.
 
 Ajout et suppression d'adresses IP.
@@ -56,13 +46,8 @@ Ajout et suppression d'adresses IP.
 Vérification de la présence d'une adresse IP dans la liste.
 
 Dictionnaire d'adresses IP : Trie des adresses IP par ordre croissant et vérification de leur classe.
-
 Exécution :
-
 Le programme affiche les résultats des opérations sur la liste d'adresses IP et le dictionnaire.
-
-Exemple d'exécution :
-
 $ python Activite20.py
 192.168.0.1
 169.254.0.1
@@ -70,10 +55,7 @@ $ python Activite20.py
 Ils restent maintenant 6 adresses dans la liste
 Oui l'adresse "192.168.0.1" est présente
 La classe de l'adresse IP de "10.0.0.1" est classe A
-
-
 Code :
-
 # On déclare la liste d'adresses IP
 adresses_ip = ["192.168.0.1", "10.0.0.1", "172.16.0.1", "200.100.50.1", "169.254.0.1"]
 
@@ -119,25 +101,3 @@ for i in adresses_ip.values():
     if i == "adresses IP publique":
         d += 1
 print(f"On a {d} adresses IP publique dans la liste")
-
-Installation
-
-Clonez ce dépôt :
-
-git clone https://github.com/username/nom-du-projet.git
-
-
-Assurez-vous que Python est installé (version 3.x recommandée).
-
-Exécutez les fichiers Python avec la commande suivante :
-
-python fibonacci.py
-python Activite20.py
-
-Contribution
-
-Si vous souhaitez contribuer à ce projet, vous pouvez envoyer des pull requests ou ouvrir des issues pour discuter des améliorations possibles.
-
-Licence
-
-Ce projet est sous licence MIT.
